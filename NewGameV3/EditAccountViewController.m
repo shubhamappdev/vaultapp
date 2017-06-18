@@ -2,8 +2,8 @@
 //  EditAccountViewController.m
 //  NewGameV3
 //
-//  Created by Bhalachandra Banavalikar on 6/20/16.
-//  Copyright © 2016 Bhalachandra Banavalikar. All rights reserved.
+//  Created by Shubham Banavalikar on 6/20/16.
+//  Copyright © 2016 Shubham Banavalikar. All rights reserved.
 //
 
 #import "EditAccountViewController.h"
