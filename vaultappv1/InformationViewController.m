@@ -1,6 +1,6 @@
 //
 //  InformationViewController.m
-//  NewGameV3
+//  
 //
 //  Created by Shubham Banavalikar on 8/2/16.
 //  Copyright © 2016 Shubham Banavalikar. All rights reserved.
