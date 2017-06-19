@@ -1,10 +1,11 @@
-//
-//  WebViewController.h
-//  
-//
-//  Created by Shubham Banavalikar on 7/11/16.
-//  Copyright © 2016 Shubham Banavalikar. All rights reserved.
-//
+/*
+ *  WebViewController.h
+ *  vaultapp
+ *
+ *  Created by Shubham Banavalikar on 6/19/16
+ *  Copyright © 2016 Shubham Banavalikar. All rights reserved.
+ *
+ */
 
 #import <UIKit/UIKit.h>
 

@@ -1,10 +1,11 @@
-//
-//  MakeAccountViewController.h
-//  
-//
-//  Created by Shubham Banavalikar on 6/20/16.
-//  Copyright © 2016 Shubham Banavalikar. All rights reserved.
-//
+/*
+ *  MakeAccountViewController.h
+ *  vaultapp
+ *
+ *  Created by Shubham Banavalikar on 6/19/16
+ *  Copyright © 2016 Shubham Banavalikar. All rights reserved.
+ *
+ */
 
 #import <UIKit/UIKit.h>
 

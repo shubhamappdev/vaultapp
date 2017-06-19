@@ -1,10 +1,11 @@
-//
-//  EditEntryViewController.m
-//  
-//
-//  Created by Shubham Banavalikar on 8/7/16.
-//  Copyright © 2016 Shubham Banavalikar. All rights reserved.
-//
+/*
+ *  EditEntryViewController.m
+ *  vaultapp
+ *
+ *  Created by Shubham Banavalikar on 6/19/16
+ *  Copyright © 2016 Shubham Banavalikar. All rights reserved.
+ *
+ */
 
 #import "EditEntryViewController.h"
 #import "Account.h"

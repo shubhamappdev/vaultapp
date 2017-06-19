@@ -1,10 +1,11 @@
-//
-//  InformationViewController.h
-//  
-//
-//  Created by Shubham Banavalikar on 8/2/16.
-//  Copyright © 2016 Shubham Banavalikar. All rights reserved.
-//
+/*
+ *  InformationViewController.h
+ *  vaultapp
+ *
+ *  Created by Shubham Banavalikar on 6/19/16
+ *  Copyright © 2016 Shubham Banavalikar. All rights reserved.
+ *
+ */
 
 #import <UIKit/UIKit.h>
 
