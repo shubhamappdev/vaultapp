@@ -1,10 +1,11 @@
-//
-//  EditAccountViewController.m
-//  
-//
-//  Created by Shubham Banavalikar on 6/20/16.
-//  Copyright © 2016 Shubham Banavalikar. All rights reserved.
-//
+/*
+ *  EditAccountViewController.m
+ *  vaultapp
+ *
+ *  Created by Shubham Banavalikar on 6/19/16
+ *  Copyright © 2016 Shubham Banavalikar. All rights reserved.
+ *
+ */
 
 #import "EditAccountViewController.h"
 #import "WebViewController.h"

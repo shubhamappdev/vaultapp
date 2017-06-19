@@ -1,10 +1,11 @@
-//
-//  NSEncrypt.h
-//  
-//
-//  Created by Shubham Banavalikar on 6/20/16.
-//  Copyright © 2016 Shubham Banavalikar. All rights reserved.
-//
+/*
+ *  NSEncrypt.h
+ *  vaultapp
+ *
+ *  Created by Shubham Banavalikar on 6/19/16
+ *  Copyright © 2016 Shubham Banavalikar. All rights reserved.
+ *
+ */
 
 #import <Foundation/Foundation.h>
 #import "NSData.h"

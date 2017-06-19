@@ -1,10 +1,11 @@
-//
-//  Account.h
-//  
-//
-//  Created by Shubham Banavalikar on 6/19/16.
-//  Copyright © 2016 Shubham Banavalikar. All rights reserved.
-//
+/*
+ *  Account.h
+ *  vaultapp
+ *
+ *  Created by Shubham Banavalikar on 6/19/16
+ *  Copyright © 2016 Shubham Banavalikar. All rights reserved.
+ *
+ */
 
 #import <Foundation/Foundation.h>
 
