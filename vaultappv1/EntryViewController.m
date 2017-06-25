@@ -135,7 +135,7 @@ void append5(NSString *msg){
     NSString *fileContentsString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
     NSCharacterSet *newlineCharSet = [NSCharacterSet newlineCharacterSet];
     NSArray *parsed = [fileContentsString componentsSeparatedByCharactersInSet: newlineCharSet];
-    for(int j = parsed.count - 3; j >= 0; j--) {
+    for(int j = (int)parsed.count - 3; j >= 0; j--) {
         NSString *newStr = [ma decryption: [parsed objectAtIndex: j]];
         if([newStr isEqualToString:self.entryName.text]) {
             self.confirm.text = @"Entry Name Already Exists";

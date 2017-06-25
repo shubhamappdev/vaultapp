@@ -22,24 +22,23 @@ NSString *acclabel, *userlabel, *passlabel, *urllabel;
 NSUInteger *count2, *presscount;
 NSString *user, *pass, *URL;
 NSUInteger *fincount, *secondcount;
-BOOL *isgood;
-BOOL *came = NO;
-BOOL *editexists;
-BOOL *camenow, *cameHere1;
-BOOL *proceed, proceed1;
+BOOL isgood;
+BOOL came = NO;
+BOOL editexists;
+BOOL camenow, cameHere1;
+BOOL proceed, proceed1;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     proceed1 = YES;
-    NSString *oneLineStr;
-    NSString *subLineStr, *us, *pa, *list;
+    NSString *us, *pa, *list;
     NSCharacterSet *newlineCharSet = [NSCharacterSet newlineCharacterSet];
     NSURL *fileURL = [NSURL fileURLWithPath:[@"~/Documents/AccountInformation.txt" stringByExpandingTildeInPath]];
     NSError *error = nil;
     NSString *fileContentsString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
     NSArray *parsed = [fileContentsString componentsSeparatedByCharactersInSet: newlineCharSet];
-    for (int i = parsed.count - 1; i >= 0; i--)
+    for (int i = (int)parsed.count - 1; i >= 0; i--)
     {
         NSString *ma = [[NSString alloc] init];
         NSString *oneLineStr = [ma decryption: [parsed objectAtIndex:i]];
@@ -122,7 +121,7 @@ void append1(NSString *msg){
     NSString *fileContentsString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
     NSCharacterSet *newlineCharSet = [NSCharacterSet newlineCharacterSet];
     NSArray *parsed = [fileContentsString componentsSeparatedByCharactersInSet: newlineCharSet];
-    for(int j = parsed.count - 3; j >= 0; j--) {
+    for(int j = (int)parsed.count - 3; j >= 0; j--) {
         NSString *newStr = [ma decryption: [parsed objectAtIndex:j]];
         if(![self.curraccName.text isEqualToString: acclabel]) {
             if([newStr isEqualToString:self.curraccName.text]) {
@@ -235,7 +234,7 @@ void append1(NSString *msg){
         NSString *fileContentsString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
         NSCharacterSet *newlineCharSet = [NSCharacterSet newlineCharacterSet];
         NSArray *parsed = [fileContentsString componentsSeparatedByCharactersInSet: newlineCharSet];
-        for(int j = parsed.count - 3; j >= 0; j--) {
+        for(int j = (int)parsed.count - 3; j >= 0; j--) {
             NSString *newStr = [ma decryption: [parsed objectAtIndex:j]];
             if(![self.curraccName.text isEqualToString: acclabel]) {
                 if([newStr isEqualToString:self.curraccName.text]) {
