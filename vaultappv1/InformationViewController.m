@@ -25,7 +25,7 @@ NSMutableArray *keeparr;
 NSUInteger *viewcount1 = 0;
 BOOL isgood1 = NO;
 NSMutableArray *savedacc;
-BOOL *cameHere = YES;
+BOOL cameHere = YES;
 NSUInteger *mycount1;
 
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -56,24 +56,24 @@ NSUInteger *mycount1;
     NSString *ma = [[NSString alloc] init];
     [super viewWillAppear: animated];
     if(cameHere == YES) {
-    if(self.information.count == 0) {
-    NSURL *fileURL = [NSURL fileURLWithPath:[@"~/Documents/EntryNames.txt" stringByExpandingTildeInPath]];
-    NSError *error = nil;
-    NSString *fileContentsString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
-    NSCharacterSet *newlineCharSet = [NSCharacterSet newlineCharacterSet];
-    NSArray *parsed = [fileContentsString componentsSeparatedByCharactersInSet: newlineCharSet];
-    for(int j = parsed.count - 3; j >= 0; j--) {
-        NSString *newStr = [ma decryption: [parsed objectAtIndex: j]];
-        newStr = [newStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        if(!([newStr isEqualToString: @"end"])) {
-            Account *accObj8 = [[Account alloc] initWithName: newStr];
-            [_information addObject: accObj8];
+        if(self.information.count == 0) {
+            NSURL *fileURL = [NSURL fileURLWithPath:[@"~/Documents/EntryNames.txt" stringByExpandingTildeInPath]];
+            NSError *error = nil;
+            NSString *fileContentsString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
+            NSCharacterSet *newlineCharSet = [NSCharacterSet newlineCharacterSet];
+            NSArray *parsed = [fileContentsString componentsSeparatedByCharactersInSet: newlineCharSet];
+            for(int j = (int)parsed.count - 3; j >= 0; j--) {
+                NSString *newStr = [ma decryption: [parsed objectAtIndex: j]];
+                newStr = [newStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+                if(!([newStr isEqualToString: @"end"])) {
+                    Account *accObj8 = [[Account alloc] initWithName: newStr];
+                    [_information addObject: accObj8];
+                }
+                if(([newStr isEqualToString: @"end"])) {
+                    j = -1;
+                }
+            }
         }
-        if(([newStr isEqualToString: @"end"])) {
-            j = -1;
-        }
-    }
-    }
         cameHere = NO;
     }
     [self.tableView reloadData];
@@ -83,7 +83,7 @@ NSUInteger *mycount1;
     [super viewDidDisappear:animated];
     NSString *ma = [[NSString alloc] init];
     if(_information.count != 0) {
-        for (int i = _information.count - 1; i >= 0; i--) {
+        for (int i = (int)_information.count - 1; i >= 0; i--) {
             Account *account = [self.information objectAtIndex: i];
             append3([ma encryption:[NSString stringWithFormat: @"%@\n", account.accName]]);
         }
@@ -138,7 +138,7 @@ void append3(NSString *msg){
         [_del setTitle: @"Delete" forState: UIControlStateNormal];
         mycount1 = 0;
     }
-
+    
 }
 
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -152,7 +152,7 @@ void append3(NSString *msg){
         [self.entries deleteRowsAtIndexPaths: [NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     if(_information.count != 0) {
-        for (int i = _information.count - 1; i >= 0; i--) {
+        for (int i = (int)_information.count - 1; i >= 0; i--) {
             Account *account = [self.information objectAtIndex: i];
             append3([ma encryption:[NSString stringWithFormat: @"%@\n", account.accName]]);
         }
@@ -178,12 +178,8 @@ void append3(NSString *msg){
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *ma = [[NSString alloc] init];
     NSString *oneLineStr;
-    NSString *subLineStr;
     NSString *msg1 = @"";
-    NSInteger *ind1;
-    NSInteger *ind2 = 0;
     NSMutableArray *mess = [[NSMutableArray alloc] init];
-    NSMutableArray *finmess = [[NSMutableArray alloc] init];
     Account *needobj = [self.information objectAtIndex:indexPath.row];
     NSString *msg = needobj.accName;
     NSString *finmsg = [msg stringByReplacingOccurrencesOfString:@"\r" withString:@""];
@@ -193,7 +189,7 @@ void append3(NSString *msg){
     NSError *error = nil;
     NSString *fileContentsString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
     NSArray *parsed = [fileContentsString componentsSeparatedByCharactersInSet: newlineCharSet];
-    for (int i = parsed.count - 1; i >= 0; i--)
+    for (int i = (int)parsed.count - 1; i >= 0; i--)
     {
         oneLineStr = [ma decryption:[parsed objectAtIndex: i]];
         oneLineStr = [oneLineStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -248,7 +244,7 @@ void append3(NSString *msg){
     }
     cell.textLabel.text = currentAccount.accName;
     
-    for (int i = _information.count - 1; i >= 0; i--) {
+    for (int i = (int)_information.count - 1; i >= 0; i--) {
         Account *account = [self.information objectAtIndex: i];
         append3([ma encryption:[NSString stringWithFormat: @"%@\n", account.accName]]);
     }
@@ -264,38 +260,38 @@ void append3(NSString *msg){
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 
 #pragma mark - Navigation
