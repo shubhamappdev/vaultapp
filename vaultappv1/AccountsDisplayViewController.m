@@ -21,9 +21,9 @@ NSString *us, *pa, *list, *newlabel;
 NSUInteger *count1 = 0;
 NSUInteger *other = 0;
 NSUInteger *viewcount = 0;
-NSUInteger *mynum, *mycount;
+NSUInteger *mynum = 0, *mycount = 0;
 NSMutableArray *savedAcc;
-BOOL  *isgood2 = YES;
+BOOL  isgood2 = YES;
 
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
@@ -58,7 +58,7 @@ BOOL  *isgood2 = YES;
     NSString *fileContentsString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
     NSCharacterSet *newlineCharSet = [NSCharacterSet newlineCharacterSet];
     NSArray *parsed = [fileContentsString componentsSeparatedByCharactersInSet: newlineCharSet];
-        for(int j = parsed.count - 3; j >= 0; j--) {
+        for(int j = (int)parsed.count - 3; j >= 0; j--) {
             NSString *ma = [[NSString alloc] init];
             NSString *newStr = [ma decryption: [parsed objectAtIndex:j]];
             newStr = [newStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -91,7 +91,7 @@ BOOL  *isgood2 = YES;
     [super viewDidDisappear:animated];
     NSString *ma = [[NSString alloc] init];
     if(_accounts.count != 0) {
-        for (int i = _accounts.count - 1; i >= 0; i--) {
+        for (int i = (int)_accounts.count - 1; i >= 0; i--) {
             Account *account = [self.accounts objectAtIndex: i];
             append4([ma encryption: [NSString stringWithFormat: @"%@\n", account.accName]]);
         }
@@ -163,7 +163,7 @@ void append4(NSString *msg){
     else if([segue.identifier isEqualToString: @"same"]) {
         InformationViewController *ev41 = [[InformationViewController alloc] init];
         [ev41 setNew];
-        self.docount == 0;
+        self.docount = 0;
     }
 }
 
@@ -208,7 +208,7 @@ void append4(NSString *msg){
         [self.labels deleteRowsAtIndexPaths: [NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     if(_accounts.count != 0) {
-        for (int i = _accounts.count - 1; i >= 0; i--) {
+        for (int i = (int)_accounts.count - 1; i >= 0; i--) {
             Account *account = [self.accounts objectAtIndex: i];
             append4([ma encryption: [NSString stringWithFormat: @"%@\n", account.accName]]);
         }
