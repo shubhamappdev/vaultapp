@@ -9,6 +9,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--TouchID View Controller-->
+        <scene sceneID="hsH-LB-Xsa">
+            <objects>
+                <viewController id="r0c-kJ-4VC" customClass="TouchIDViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0C1-Bv-a8i"/>
+                        <viewControllerLayoutGuide type="bottom" id="VEt-Sj-hA2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g5a-Y1-xW6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjn-cQ-WFf">
+                                <rect key="frame" x="143" y="318" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Authenticate">
+                                    <color key="titleColor" red="0.0036785972770303488" green="0.15074306726455688" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="authenticateButtonTapped:" destination="r0c-kJ-4VC" eventType="touchUpInside" id="cQE-YS-kam"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uaW-PF-a2S"/>
+                    <connections>
+                        <segue destination="HXA-Uc-8OL" kind="show" identifier="Custom" id="8f3-uG-wUB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pvr-0o-Mbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="373"/>
+        </scene>
         <!--Account Logins-->
         <scene sceneID="CO2-tE-mbY">
             <objects>
@@ -77,6 +111,7 @@
                             <outlet property="delegate" destination="HXA-Uc-8OL" id="ZW3-3a-ZJd"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Account Logins" id="yhr-Mu-lJG">
                         <barButtonItem key="leftBarButtonItem" title="Delete" id="mdq-Ro-rek">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,6 +126,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="eqW-TM-YqR">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -102,7 +138,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r5-2i-zpp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="399"/>
+            <point key="canvasLocation" x="2649" y="373"/>
         </scene>
         <!--Other Information-->
         <scene sceneID="5Qw-fB-w1h">
@@ -821,12 +857,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="HXA-Uc-8OL" kind="relationship" relationship="rootViewController" id="O6N-ky-Oa3"/>
+                        <segue destination="r0c-kJ-4VC" kind="relationship" relationship="rootViewController" id="Qas-t8-hB8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZ9-cP-xH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906" y="399"/>
+            <point key="canvasLocation" x="1300" y="373"/>
         </scene>
         <!--Add An Entry-->
         <scene sceneID="4J0-HC-tah">

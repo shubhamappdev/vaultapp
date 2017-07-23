@@ -13,6 +13,7 @@
 #import "EditAccountViewController.h"
 #import "InformationViewController.h"
 #import "NSEncrypt.h"
+#import "TouchIDViewController.h"
 
 @implementation AccountsDisplayViewController
 

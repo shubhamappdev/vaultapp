@@ -19,6 +19,7 @@
 		1424D4761D18784400E7573D /* MakeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1424D4751D18784400E7573D /* MakeAccountViewController.m */; };
 		1424D4791D189FB600E7573D /* EditAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1424D4781D189FB600E7573D /* EditAccountViewController.m */; };
 		1424D47C1D341E9F00E7573D /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1424D47B1D341E9F00E7573D /* WebViewController.m */; };
+		1431B1B51F25246700298211 /* TouchIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1431B1B41F25246700298211 /* TouchIDViewController.m */; };
 		143229921EF4BB88001B43B8 /* NSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 143229911EF4BB88001B43B8 /* NSData.m */; };
 		143229951EF4BC2B001B43B8 /* NSEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 143229941EF4BC2B001B43B8 /* NSEncrypt.m */; };
 		143229971EF6E95F001B43B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 143229961EF6E95F001B43B8 /* Default-568h@2x.png */; };
@@ -69,6 +70,8 @@
 		1424D4781D189FB600E7573D /* EditAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAccountViewController.m; sourceTree = "<group>"; };
 		1424D47A1D341E9F00E7573D /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		1424D47B1D341E9F00E7573D /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		1431B1B31F25246700298211 /* TouchIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchIDViewController.h; sourceTree = "<group>"; };
+		1431B1B41F25246700298211 /* TouchIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchIDViewController.m; sourceTree = "<group>"; };
 		143229901EF4BA6E001B43B8 /* NSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSData.h; sourceTree = "<group>"; };
 		143229911EF4BB88001B43B8 /* NSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSData.m; sourceTree = "<group>"; };
 		143229931EF4BBEB001B43B8 /* NSEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSEncrypt.h; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				1424D4351D172B2700E7573D /* AppDelegate.h */,
 				1424D4361D172B2700E7573D /* AppDelegate.m */,
 				1424D43B1D172B2700E7573D /* Main.storyboard */,
+				1431B1B31F25246700298211 /* TouchIDViewController.h */,
+				1431B1B41F25246700298211 /* TouchIDViewController.m */,
 				14728AA81D582E15007A58CB /* EditEntryViewController.h */,
 				14728AA91D582E15007A58CB /* EditEntryViewController.m */,
 				14728AA21D515EDA007A58CB /* InformationViewController.h */,
@@ -335,6 +340,7 @@
 				143229921EF4BB88001B43B8 /* NSData.m in Sources */,
 				1424D4761D18784400E7573D /* MakeAccountViewController.m in Sources */,
 				1424D4341D172B2700E7573D /* main.m in Sources */,
+				1431B1B51F25246700298211 /* TouchIDViewController.m in Sources */,
 				14728AAA1D582E15007A58CB /* EditEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
